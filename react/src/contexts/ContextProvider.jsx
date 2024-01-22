@@ -11,7 +11,13 @@ const StateContext = createContext({
 
 // skontroluj a nastav token prihlaseneho uzivatela
 export const ContextProvider = ({children}) => {
-    const [user, setUser] = useState({});
+    // info o prihlasenom uzivatelovi
+    const [user, setUser] = useState({
+        id: 1,
+        name: 'Feri',
+        email: 'sao@feri.sk',
+        role: 'Admin'
+    });
     //const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
     const [token, _setToken] = useState(123); //testovaci token
 
