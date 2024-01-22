@@ -16,8 +16,7 @@ export default function GuestLayout() {
     return (
         <div>
             <div>
-                Sekcia Iba pre prihlasených a vložené z menu:
-                <Outlet />
+               <Outlet />
             </div>
         </div>   
     )

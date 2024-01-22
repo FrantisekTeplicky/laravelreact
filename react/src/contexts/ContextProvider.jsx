@@ -13,13 +13,11 @@ const StateContext = createContext({
 export const ContextProvider = ({children}) => {
     // info o prihlasenom uzivatelovi
     const [user, setUser] = useState({
-        id: 1,
-        name: 'Feri',
-        email: 'sao@feri.sk',
-        role: 'Admin'
+        name: 'Feri'
     });
     //const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
-    const [token, _setToken] = useState(123); //testovaci token
+    //const [token, _setToken] = useState(123); //testovaci token
+    const [token, _setToken] = useState(null); //testovaci token
 
     const setToken = (token) => {
         _setToken(token)
