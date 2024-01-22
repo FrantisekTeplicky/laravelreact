@@ -2,7 +2,7 @@ export default function Dashboard() {
   return (
     <div>
 
-        Dashboard
+        Dashboard 1
     
     </div>
   )

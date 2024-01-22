@@ -12,8 +12,8 @@ const StateContext = createContext({
 // skontroluj a nastav token prihlaseneho uzivatela
 export const ContextProvider = ({children}) => {
     const [user, setUser] = useState({});
-    const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
-    //const [token, _setToken] = useState(123); //testovaci token
+    //const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
+    const [token, _setToken] = useState(123); //testovaci token
 
     const setToken = (token) => {
         _setToken(token)
