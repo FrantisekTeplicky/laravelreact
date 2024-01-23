@@ -8,7 +8,7 @@ export default function Login() {
 
   return (
     // Formular na prihlásenie
-    <div className="login-signup-form animated faadeInDown">
+    <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={onSubmit}>
             <h1>Prihlásenie</h1>
