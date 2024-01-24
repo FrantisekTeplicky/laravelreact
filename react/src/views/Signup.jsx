@@ -14,7 +14,7 @@ export default function Signup() {
             <input type="name" placeholder="Meno" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Heslo" />
-            <input type="passwordup" placeholder="Opakuj heslo" />
+            <input type="passwordup" placeholder="Heslo znova" />
             <button className="btn btn-block">Registruj</button>
             <p className="message">
               Už ste registrovaný? <Link to="/login">Login</Link>
