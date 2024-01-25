@@ -11,7 +11,7 @@ export default function Login() {
     <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={onSubmit}>
-            <h1>Prihlásenie</h1>
+            <h1 className="title">Prihlásenie</h1>
             <input type="email" placeholder="Zadaj email" />
             <input type="password" placeholder="Zadaj heslo" />
             <button className="btn btn-block">Login</button>

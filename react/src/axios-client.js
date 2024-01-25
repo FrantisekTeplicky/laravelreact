@@ -1,12 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 
 // spojenie
-const axionClient = axios.create({
+const axiosClient = axios.create({
     baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`
 })
 
 // konfiguracia spojenia
-axionClient.interceptors.response.use((config) => {
+axiosClient.interceptors.response.use((config) => {
 
     const token = localStorage.get('ACCESS_TOKEN')
     config.headers.Authorization = `Bearer ${token}`;
@@ -16,7 +16,7 @@ axionClient.interceptors.response.use((config) => {
 })
 
 // odpoved a vysledok
-axionClient.interceptors.request.use((response) => {
+axiosClient.interceptors.request.use((response) => {
     return response;
 }, (error) => {
     const {response} = error;
@@ -30,3 +30,5 @@ axionClient.interceptors.request.use((response) => {
 
 
 });
+
+export default axiosClient;

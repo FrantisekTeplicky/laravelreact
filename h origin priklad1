@@ -1,0 +1,16 @@
+[33m057b835[m[33m ([m[1;36mHEAD -> [m[1;32mpriklad1[m[33m)[m Logika pre pripojenie axions
+[33mc800819[m[33m ([m[1;31morigin/priklad1[m[33m)[m Install Axios do Reaktu
+[33m5bf6c34[m Formular signup a navrat na login
+[33m7f7b00b[m Formular login a odklik na novu registraciu
+[33m3a2973f[m Defaultny skusobny uzivatel a zobrazenie men a tl odhlas
+[33mf1a3d10[m Nastylovanie a vytvorenie hlavnej struktury zobrazenia
+[33m6684067[m Kontrola navigacie pomocou tokenu prihlaseneho uzivatela
+[33mf6fa044[m Zakladna struktura webu router, zeheslovana a nezaheslovaná sekcia a priprava na  navigáciu
+[33m33af740[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Doplnennie Redux do Reactu, koniec instalacii
+[33m04ce9a3[m Doplnennie sass a dom do Reactu
+[33mea659e5[m Oprava chyby po vycisteni
+[33m5023474[m Vycisti React projekt
+[33m65ef56e[m Instalavia Vite a React
+[33m92c703e[m Konfiguracia Laravel na MariaDB
+[33mcf18837[m Laravel install
+[33ma7121ae[m first commit
