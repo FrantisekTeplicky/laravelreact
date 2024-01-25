@@ -15,9 +15,10 @@ export const ContextProvider = ({children}) => {
     const [user, setUser] = useState({
         name: 'Feri'
     });
-    //const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
+    const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
+    //Testovacie kým nebolo prepojenie s backend
     //const [token, _setToken] = useState(123); //testovaci token
-    const [token, _setToken] = useState(null); //testovaci token
+    //const [token, _setToken] = useState(null); //testovaci token
 
     const setToken = (token) => {
         _setToken(token)
@@ -28,7 +29,7 @@ export const ContextProvider = ({children}) => {
         }
     };
     
-    // posli spat info ako pole
+    // zadefinuj uzivatela po prihlaseni
     return (
         <StateContext.Provider value={{
             user,
@@ -44,5 +45,5 @@ export const ContextProvider = ({children}) => {
         )
     }
 
-// exportna fubkcia statusu uzivatela
+// exportna fubkcia statusu uzivatela do Signup
 export const useStateContext = () => useContext(StateContext)

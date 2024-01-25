@@ -8,7 +8,7 @@ const axiosClient = axios.create({
 // konfiguracia spojenia
 axiosClient.interceptors.response.use((config) => {
 
-    const token = localStorage.get('ACCESS_TOKEN')
+    const token = localStorage.getItem('ACCESS_TOKEN')
     config.headers.Authorization = `Bearer ${token}`;
 
     return config;
@@ -19,6 +19,7 @@ axiosClient.interceptors.response.use((config) => {
 axiosClient.interceptors.request.use((response) => {
     return response;
 }, (error) => {
+    try {
     const {response} = error;
     // 401 - neopravneny uzivatel, neplatny token
     if (response.status === 401) {
@@ -26,8 +27,12 @@ axiosClient.interceptors.request.use((response) => {
         // v tom prípae odstran pristupový token
         localStorage.removeItem('ACCESS_TOKEN');
     }   // do else je mozne pridať a ošetrit dalšie mozne chybove stavy 404, 403 
+    } catch (e) {
+        console.error(e);
+    }
+    
+    
     throw error;
-
 
 });
 

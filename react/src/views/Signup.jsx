@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import axiosClient from "../axios-client.js";
+import { useState } from "react";
+import { useStateContext } from "../contexts/ContextProvider.jsx";
 
 export default function Signup() {
 
@@ -8,7 +10,8 @@ export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
-
+  const [errors, setErrors] = useState(null);
+  const {setUser, setToken} = useStateContext()
 
   const onSubmit = (ev) => {
     ev.preventDefault()
@@ -26,11 +29,12 @@ export default function Signup() {
 
     })
     .catch((err) => {
-
+      //console.log(err)
       const response = err.response; 
       if (response && response.status === 422) {
         //const errors = response.data.errors;
-        console.log(response.data.errors);
+        //console.log(response.data.errors);
+        setErrors(response.data.errors)
       }
      })
     }
@@ -49,8 +53,16 @@ export default function Signup() {
             <input ref={nameRef} placeholder="Meno" />
             <input ref={emailRef} type="email" placeholder="Email" />
             <input ref={passwordRef} type="password" placeholder="Heslo" />
-            <input ref={passwordConfirmationRef} type="passwordup" placeholder="Heslo znova" />
+            <input ref={passwordConfirmationRef} type="password" placeholder="Heslo znova" />
+            {errors && <div className="alert">
+                {Object.keys(errors).map(key => (
+                  <p key={key}>{errors[key][0]}</p>
+                ))}
+              </div>
+            }
+            
             <button className="btn btn-block">Registruj</button>
+
             <p className="message">
               Už ste registrovaný? <Link to="/login">Login</Link>
             </p>
